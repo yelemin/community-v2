@@ -15,3 +15,16 @@
 9、查询用户被回复话题接口（回复内容、主题、用户）
 10、回复话题/楼层/讨论接口
 11、关键词查询话题接口
+12、根据标签查询对应范围内话题简介列表
+
+后续改造微服务：
+1、talk-biz-互动讨论
+2、account-用户中心
+3、talk-api-互动讨论对外API
+
+表结构设计：
+user-用户表
+user_discuss-用户讨论相关表？
+topic_meta-话题元数据表
+topic_discuss-话题讨论表
+topic_discuss_comment-话题讨论评论表
