@@ -1,0 +1,18 @@
+2022-10-02 00:38:40.260  WARN 56903 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2h25s909ms).
+2022-10-02 02:38:46.052  WARN 56903 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2h5s773ms).
+2022-10-02 05:10:23.613  WARN 56903 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2h31m37s578ms).
+2022-10-02 08:21:33.419  WARN 56903 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3h11m9s804ms).
+2022-10-02 08:28:29.363  INFO 56903 --- [scheduling-1] l.m.community.schedule.AvatarFixTasks    : fixUserAvatar start Sun Oct 02 08:28:29 CST 2022
+2022-10-02 08:28:29.418  INFO 56903 --- [scheduling-1] l.m.community.schedule.AvatarFixTasks    : fixUserAvatar stop Sun Oct 02 08:28:29 CST 2022
+2022-10-02 08:38:29.380  INFO 56903 --- [scheduling-1] l.m.community.schedule.AvatarFixTasks    : fixUserAvatar start Sun Oct 02 08:38:29 CST 2022
+2022-10-02 08:38:29.384  INFO 56903 --- [scheduling-1] l.m.community.schedule.AvatarFixTasks    : fixUserAvatar stop Sun Oct 02 08:38:29 CST 2022
+2022-10-02 08:46:45.294  WARN 56903 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=5m11s705ms).
+2022-10-02 08:49:09.678  WARN 56903 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m24s384ms).
+2022-10-02 08:55:05.452  INFO 56903 --- [scheduling-1] l.m.community.schedule.AvatarFixTasks    : fixUserAvatar start Sun Oct 02 08:55:05 CST 2022
+2022-10-02 08:55:05.454  INFO 56903 --- [scheduling-1] l.m.community.schedule.AvatarFixTasks    : fixUserAvatar stop Sun Oct 02 08:55:05 CST 2022
+2022-10-02 09:05:05.450  INFO 56903 --- [scheduling-1] l.m.community.schedule.AvatarFixTasks    : fixUserAvatar start Sun Oct 02 09:05:05 CST 2022
+2022-10-02 09:05:05.451  INFO 56903 --- [scheduling-1] l.m.community.schedule.AvatarFixTasks    : fixUserAvatar stop Sun Oct 02 09:05:05 CST 2022
+2022-10-02 09:13:56.640  INFO 56903 --- [Thread-8] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2022-10-02 09:13:56.654  INFO 56903 --- [Thread-8] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2022-10-02 09:13:56.656  INFO 56903 --- [Thread-8] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-10-02 09:13:56.684  INFO 56903 --- [Thread-8] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

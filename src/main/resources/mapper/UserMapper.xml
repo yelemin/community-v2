@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ylm.community.mapper.UserMapper">
+
+    <sql id="Base_Column_List">
+        id,uid,username,password,encrypted_mobile,mobile_uid,nickname,salt,is_delete,create_time,update_time
+    </sql>
+
+    <sql id="Insert_Column_List">
+        uid,username,password,encrypted_mobile,mobile_uid,nickname,salt
+    </sql>
+
+    <sql id="Table">
+        `user`
+    </sql>
+
+    <resultMap id="BaseResultMap" type="com.ylm.community.model.entity.UserEntity">
+        <id column="id" property="id"/>
+        <result column="uid" property="uid"/>
+        <result column="username" property="username"/>
+        <result column="password" property="password"/>
+        <result column="encrypted_mobile" property="encryptedMobile"/>
+        <result column="mobile_uid" property="mobileUid"/>
+        <result column="nickname" property="nickname"/>
+        <result column="salt" property="salt"/>
+        <result column="is_delete" property="isDelete"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+    </resultMap>
+
+    <select id="getByUsername" parameterType="java.lang.String" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM
+        <include refid="Table"/>
+        WHERE
+        is_delete = 0
+        AND username = #{username}
+        ORDER BY id desc;
+    </select>
+
+    <insert id="add" parameterType="com.ylm.community.model.entity.UserEntity">
+        INSERT INTO
+        <include refid="Table"/>
+        (<include refid="Insert_Column_List"/>)
+        VALUES
+        (#{uid},#{username},#{password},#{encryptedMobile},#{mobileUid},#{nickname},#{salt})
+    </insert>
+
+</mapper>
