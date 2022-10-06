@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ylm.community.mapper.PostMainInfoMapper">
+
+    <sql id="Base_Column_List">
+        id,uid,title,content,topic_type,category_type,user_uid,like_count,visit_count,is_delete,create_time,update_time
+    </sql>
+
+    <sql id="Insert_Column_List">
+        uid,title,content,topic_type,category_type,user_uid,like_count,visit_count
+    </sql>
+
+    <sql id="Table">
+        `post_main_info`
+    </sql>
+
+    <resultMap id="BaseResultMap" type="com.ylm.community.model.entity.PostMainInfoEntity">
+        <id column="id" property="id"/>
+        <result column="uid" property="uid"/>
+        <result column="title" property="title"/>
+        <result column="content" property="content"/>
+        <result column="topic_type" property="topicType"/>
+        <result column="category_type" property="categoryType"/>
+        <result column="user_uid" property="userUid"/>
+        <result column="like_count" property="likeCount"/>
+        <result column="visit_count" property="visitCount"/>
+        <result column="is_delete" property="isDelete"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+    </resultMap>
+
+    <sql id="CONDITION">
+        <where>
+            <if test="condition.categoryType != null">
+                AND category_type = #{condition.categoryType}
+            </if>
+            <if test="condition.topicType != null">
+                AND topic_type = #{condition.topicType}
+            </if>
+        </where>
+    </sql>
+
+    <select id="searchByCondition" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM
+        <include refid="Table"/>
+        WHERE
+        is_delete = 0
+        <include refid="CONDITION"/>
+        ORDER BY id desc
+        LIMIT #{skip}, #{limit};
+    </select>
+
+    <select id="searchCountByCondition" resultType="java.lang.Long">
+        SELECT
+        COUNT(*)
+        FROM
+        <include refid="Table"/>
+        WHERE
+        is_delete = 0
+        <include refid="CONDITION"/>
+    </select>
+
+    <insert id="add" parameterType="com.ylm.community.model.entity.PostMainInfoEntity">
+        INSERT INTO
+        <include refid="Table"/>
+        (<include refid="Insert_Column_List"/>)
+        VALUES
+        (#{uid},#{title},#{content},#{topicType},#{categoryType},#{userUid},#{likeCount},#{visitCount})
+    </insert>
+
+</mapper>
