@@ -1,7 +1,9 @@
 package com.ylm.community.biz;
 
 import com.ylm.community.model.input.AddPostMainInput;
+import com.ylm.community.model.input.GetPostDetailInput;
 import com.ylm.community.model.input.SearchPostMainInput;
+import com.ylm.community.model.output.GetPostDetailOutput;
 import com.ylm.community.model.output.SearchPostMainOutput;
 import com.ylm.community.utils.PageUtils;
 
@@ -14,5 +16,7 @@ public interface PostBiz {
     PageUtils.Page<SearchPostMainOutput> searchMainByCategory(SearchPostMainInput input);
 
     void publish(AddPostMainInput input);
+
+    GetPostDetailOutput getDetail(GetPostDetailInput input);
 
 }

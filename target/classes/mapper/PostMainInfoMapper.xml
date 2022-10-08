@@ -45,9 +45,8 @@
         <include refid="Base_Column_List"/>
         FROM
         <include refid="Table"/>
-        WHERE
-        is_delete = 0
         <include refid="CONDITION"/>
+        AND is_delete = 0
         ORDER BY id desc
         LIMIT #{skip}, #{limit};
     </select>
@@ -57,9 +56,8 @@
         COUNT(*)
         FROM
         <include refid="Table"/>
-        WHERE
-        is_delete = 0
         <include refid="CONDITION"/>
+        AND is_delete = 0
     </select>
 
     <insert id="add" parameterType="com.ylm.community.model.entity.PostMainInfoEntity">

@@ -2,6 +2,7 @@ package com.ylm.community.service.impl;
 
 import com.ylm.community.mapper.PostMainInfoMapper;
 import com.ylm.community.model.entity.PostMainInfoEntity;
+import com.ylm.community.model.entity.PostReplyInfoEntity;
 import com.ylm.community.model.input.AddPostMainInput;
 import com.ylm.community.model.input.SearchPostMainInput;
 import com.ylm.community.service.PostService;
@@ -66,7 +67,18 @@ public class PostServiceImpl implements PostService {
         entity.setUserUid(input.getUserUid());
         entity.setLikeCount(0);
         entity.setVisitCount(0);
+        log.info("postMain title:{}", input.getTitle());
         postMainInfoMapper.add(entity);
+    }
+
+    @Override
+    public PostMainInfoEntity getMainByUid(String postUid) {
+        return null;
+    }
+
+    @Override
+    public List<PostReplyInfoEntity> getReplyListByPostUid(String postUid) {
+        return null;
     }
 
     private String generateUid(){

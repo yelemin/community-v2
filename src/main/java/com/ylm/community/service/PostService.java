@@ -1,6 +1,7 @@
 package com.ylm.community.service;
 
 import com.ylm.community.model.entity.PostMainInfoEntity;
+import com.ylm.community.model.entity.PostReplyInfoEntity;
 import com.ylm.community.model.input.AddPostMainInput;
 import com.ylm.community.model.input.SearchPostMainInput;
 
@@ -17,5 +18,9 @@ public interface PostService {
     Long searchMainCount(SearchPostMainInput input);
 
     void add(AddPostMainInput input);
+
+    PostMainInfoEntity getMainByUid(String postUid);
+
+    List<PostReplyInfoEntity> getReplyListByPostUid(String postUid);
 
 }

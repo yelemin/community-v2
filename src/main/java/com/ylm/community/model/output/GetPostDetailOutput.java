@@ -5,30 +5,32 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 /**
  * @author flyingwhale
- * @date 2022/10/6
+ * @date 2022/10/8
  */
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class SearchPostMainOutput {
-
-    private String postUid;
-
-    private String postUserUid;
-
-    private String postUserNickname;
+public class GetPostDetailOutput {
 
     private String title;
 
     private String content;
 
+    private String postUserUid;
+
+    private String postUserNickname;
+
     private Integer likeCount;
 
-    private Integer visitCount;
-
     private Integer replyCount;
+
+    private String createTime;
+
+    private List<GetPostReplyOutput> replyList;
 
 }

@@ -4,6 +4,7 @@ import com.ylm.community.model.entity.PostMainInfoEntity;
 import com.ylm.community.model.input.AddPostMainInput;
 import lombok.Builder;
 import lombok.Data;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -21,9 +22,9 @@ public interface PostMainInfoMapper {
      * @param limit -
      * @return -
      */
-    List<PostMainInfoEntity> searchByCondition(Condition condition, Integer skip, Integer limit);
+    List<PostMainInfoEntity> searchByCondition(@Param("condition") Condition condition, Integer skip, Integer limit);
 
-    Long searchCountByCondition(Condition condition);
+    Long searchCountByCondition(@Param("condition") Condition condition);
 
     void add(PostMainInfoEntity entity);
 

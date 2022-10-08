@@ -2,8 +2,11 @@ package com.ylm.community.biz.impl;
 
 import com.ylm.community.biz.PostBiz;
 import com.ylm.community.model.entity.PostMainInfoEntity;
+import com.ylm.community.model.entity.PostReplyInfoEntity;
 import com.ylm.community.model.input.AddPostMainInput;
+import com.ylm.community.model.input.GetPostDetailInput;
 import com.ylm.community.model.input.SearchPostMainInput;
+import com.ylm.community.model.output.GetPostDetailOutput;
 import com.ylm.community.model.output.SearchPostMainOutput;
 import com.ylm.community.service.PostService;
 import com.ylm.community.utils.AssertUtil;
@@ -49,6 +52,16 @@ public class PostBizImpl implements PostBiz {
         postService.add(input);
     }
 
+    @Override
+    public GetPostDetailOutput getDetail(GetPostDetailInput input) {
+        AssertUtil.notNull(input);
+
+        PostMainInfoEntity postMainInfoEntity = postService.getMainByUid(input.getPostUid());
+        List<PostReplyInfoEntity> replyInfoEntityList = postService.getReplyListByPostUid(input.getPostUid());
+
+        return buildGetPostDetailOutput(postMainInfoEntity, replyInfoEntityList);
+    }
+
     private List<SearchPostMainOutput> buildSearchPostMainOutput(List<PostMainInfoEntity> entityList) {
         if (CollectionUtils.isEmpty(entityList)) {
             return Collections.emptyList();
@@ -58,9 +71,14 @@ public class PostBizImpl implements PostBiz {
             to.setPostUid(from.getUid());
             to.setPostUserUid(from.getUserUid());
             //todo
-            to.setPostUserNickName(StringUtils.EMPTY);
+            to.setPostUserNickname(StringUtils.EMPTY);
             to.setReplyCount(0);
         });
+    }
+
+    private GetPostDetailOutput buildGetPostDetailOutput(PostMainInfoEntity postMainInfoEntity, List<PostReplyInfoEntity> replyInfoEntityList) {
+
+        return null;
     }
 
 }
